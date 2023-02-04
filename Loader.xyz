@@ -39,8 +39,6 @@ local function loading()
 	Logo.Size = UDim2.new(0, 100, 0, 100)
 	Logo.Image = "rbxassetid://12362129605"
 
-	UICorner_2.CornerRadius = UDim.new(0, 100)
-	UICorner_2.Parent = Logo
 
 	Load.Name = "Load"
 	Load.Parent = Loading
@@ -53,7 +51,7 @@ local BtnStroke = Instance.new("UIStroke")
 BtnStroke.Name = "BtnStroke"
             BtnStroke.Parent = Load
             BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            BtnStroke.Color = Color3.fromRGB(0, 250, 250)
+            BtnStroke.Color = Color3.fromRGB(255,130,0)
             BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
         BtnStroke.Thickness = 2
         BtnStroke.Transparency = 0
@@ -84,7 +82,7 @@ BtnStroke.Name = "BtnStroke"
 	TextLabell.Size = UDim2.new(0, 55, 0, 55)
 	TextLabell.Font = Enum.Font.GothamSemibold
 	TextLabell.Text = "Turbo Hub"
-	TextLabell.TextColor3 = Color3.fromRGB(0, 255, 255)
+	TextLabell.TextColor3 = Color3.fromRGB(255,130,0)
 	TextLabell.TextSize = 50.000
 
 	TextLabel.Parent = Load
