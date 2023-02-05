@@ -20,6 +20,12 @@ local function loading()
     local player = game.Players.LocalPlayer
     if game.PlaceId == 3101667897 then
     _G.nameGame = "Legends Of Speed"
+    elseif game.PlaceId == 2753915549 then
+    _G.nameGame = "Blox Fruis"
+    elseif game.PlaceId == 4442272183 then
+    _G.nameGame = "Blox Fruis"
+    elseif game.PlaceId == 7449423635 then
+    _G.nameGame = "Blox Fruis"
     else
     _G.nameGame = "Games Not Found"
     end
@@ -156,4 +162,6 @@ loading()
 
  if game.PlaceId == 3101667897 then
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/LegendsOfSpeed")()
-    end
+   elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+    loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/BloxFruits")()
+ end
