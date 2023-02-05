@@ -34,7 +34,7 @@ spawn(function()
  end
  end)
 
-Client = main:Label1("Client")
+Client = main:Label("Client")
 
 function UpdateClient()
 local Fps = workspace:GetRealPhysicsFPS()
@@ -47,7 +47,7 @@ spawn(function()
  end
  end)
 
-Client1 = main:Label1("Client")
+Client1 = main:Label("Client")
 
 function UpdateClient1()
 local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
