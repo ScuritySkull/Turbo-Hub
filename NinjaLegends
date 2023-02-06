@@ -454,19 +454,17 @@ ts:Teleport(game.PlaceId, p)
 end)
  								
 misc:Button("Destroy Gui",function()
-game.CoreGui["BlackTrap"]:Destroy()
+game.CoreGui["ZENHUB"]:Destroy()
 end)
 
 
-cred:Seperator("Credits By Uciha HUB")
-cred:Seperator("https://youtube.com/channel/UCD7hHx9yNjik1HjX3GkxaeQ")    
-cred:Button("Copy Link",function()
+cred:Seperator("Credits")
+cred:Button("Youtube",function()
 setclipboard('https://youtube.com/channel/UCD7hHx9yNjik1HjX3GkxaeQ')
 end)
 
-cred:Seperator("https://sociabuzz.com/farelgaming77/donate")
-cred:Button("Coppy Donate Link" ,function()
-setclipboard("https://sociabuzz.com/farelgaming77/donate")
+cred:Button("Discord" ,function()
+setclipboard("https://discord.gg/XRkzwarG")
 end)
 
 local Animate = game.Players.LocalPlayer.Character.Animate
