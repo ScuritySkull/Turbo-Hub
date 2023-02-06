@@ -1376,7 +1376,7 @@ local Dungeon = Library:Tab("Raid+Esp","rbxassetid://7044284832")
 local Misc = Library:Tab("Misc","rbxassetid://6034509993")
 local Settings = Library:Tab("Settings","rbxassetid://9606644121")
 Home:Seperator("Turbo Hub")
-Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName
+Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName)
 Time = Home:Label("Executer Time")
 
 function UpdateTime()
