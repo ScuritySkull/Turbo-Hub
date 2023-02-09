@@ -314,7 +314,7 @@ end)
 egg:Toggle("Open Crystal",false,function(state)
 _G.cCry = (state and true or false)
 	wait()
-	while _G.oCry == true do
+	while _G.cCry == true do
 		wait()
     local oh1 = "openCrystal"
 local oh2 = _G.cryEgg
