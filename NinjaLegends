@@ -307,17 +307,17 @@ local Crystal = {}
 for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
 table.insert(Crystal,v.Name)
 end
-cryEgg = egg:Dropdown('Select Crystal',Crystal,function(value)
-cryEgg = value
+egg:Dropdown('Select Crystal',Crystal,function(value)
+_G.cryEgg = value
 end)
 
-egg:Toggle("Open Crystal [Coming Soon]",false,function(state)
+egg:Toggle("Open Crystal",false,function(state)
 _G.cCry = (state and true or false)
 	wait()
 	while _G.oCry == true do
 		wait()
     local oh1 = "openCrystal"
-local oh2 = cryEgg
+local oh2 = _G.cryEgg
 game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(oh1, oh2)
 end
 end)
