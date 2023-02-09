@@ -169,6 +169,15 @@ end)
 main:Button("Teleport To Player",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
 end)
+main:Toggle("Always Tp",false,function(state)
+_G.Mmz = (state and true or false)
+	wait()
+	while _G.Mmz == true do
+		wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
+
+end
+end)
  
 main:Slider("Speed",0,90000,300,function(v)
  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
@@ -904,18 +913,17 @@ local Crystal = {}
 for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
 table.insert(Crystal,v.Name)
 end
-local OPENEGG;
-             egg:Dropdown('Select Crystal',Crystal,function(value)
-OPENEGG = value;
+egg:Dropdown('Select Crystal',Crystal,function(value)
+_G.SelectEgg = value
 end)
-egg:Toggle("Open Crystal",false,function()
+egg:Toggle("Open Crystal",false,function(state)
 _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
    local args = {
     [1] = "openCrystal",
-    [2] = OPENEGG
+    [2] = _G.SelectEgg
 }
 
 game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
