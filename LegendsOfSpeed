@@ -167,7 +167,7 @@ end)
 
 
 main:Button("Teleport To Player",function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,20,1)
 end)
 main:Toggle("Always Tp",false,function(state)
 _G.Mmz = (state and true or false)
@@ -910,24 +910,24 @@ end
 end)
 
 local Crystal = {}
-for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
-table.insert(Crystal,v.Name)
+for i,v in pairs(game.Workspace.mapCrystalsFolder:GetChildren()) do 
+  table.insert(Crystal, v.Name)
 end
-egg:Dropdown('Select Crystal',Crystal,function(value)
-_G.SelectEgg = value
-end)
-egg:Toggle("Open Crystal",false,function(state)
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = _G.SelectEgg
-}
 
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end)
+local crystalDropdown = egg:Dropdown("Select Crystal", Crystal, function(value)
+  _G.selectedCrystal = value
+end)
+
+egg:Toggle("Open Crystal", false, function(state)
+  _G.openCrystal = (state and true or false)
+
+  while _G.openCrystal do
+    wait()
+    local command = "openCrystal"
+    local crystal = _G.selectedCrystal
+    game.ReplicatedStorage.rEvents.openCrystalRemote:InvokeServer(command, crystal)
+  end
+end)
 
 
 misc:Seperator("Misc")
