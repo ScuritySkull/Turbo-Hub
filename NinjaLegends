@@ -126,8 +126,25 @@ for i,v in pairs(game:GetService("Players"):GetPlayers()) do
     table.insert(PLIST,v.DisplayName)
 end
 
-main:Dropdown("Teleport To Player",PLIST,function(value)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[value].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
+local TpPlayer;
+
+ main:Dropdown("Select Player",PLIST,function(value)
+    TpPlayer = value;
+end)
+
+
+
+main:Button("Teleport To Player",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,20,1)
+end)
+main:Toggle("Always Tp",false,function(state)
+_G.Mmz = (state and true or false)
+	wait()
+	while _G.Mmz == true do
+		wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
+
+end
 end)
  
 main:Slider("Speed",0,90000,16,function(v)
