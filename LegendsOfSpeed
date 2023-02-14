@@ -945,8 +945,21 @@ end)
 
 
 
-misc:Toggle("ANTI AFK",false,function(v)
-_G.aFk = v
+misc:Seperator("Misc")
+misc:Toggle("ANTI AFK",false,function(state)
+_G.afk = (state and true or false)
+
+  while _G.afk do
+    wait(120)
+local vu = game:GetService("VirtualUser")
+vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+wait(1)
+vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+game:service'Players'.LocalPlayer.Idled:connect(function()
+vu:CaptureController()bb:ClickButton2(Vector2.new())
+end
+end)
+end)
 end)
 
 misc:Button("Active FPS BOOST",false,function()
