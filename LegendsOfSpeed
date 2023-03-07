@@ -1,3 +1,4 @@
+
 local Update =  loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/UiLibList/main/TurboHub")()
 local Library = Update:Window("Turbo Hub","",Enum.KeyCode.RightControl);
 local main = Library:Tab("Main", "rbxassetid://6026568198")
@@ -10,6 +11,16 @@ local misc = Library:Tab("Misc", "rbxassetid://6034509993")
 local cred = Library:Tab("Credits", "rbxassetid://7743866778")
 local how = Library:Tab("Glitch Help", "rbxassetid://7733964808")
 
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local antiAFK = true
+player.Idled:connect(function()
+	if antiAFK then
+		game.VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+		wait(1)
+		game.VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+	end
+end)
 
 main:Seperator("Turbo Hub")
 main:Label("Welcome "..game.Players.LocalPlayer.DisplayName)
@@ -71,7 +82,16 @@ main:Line()
 cred:Seperator("Credits")
 race:Seperator("Auto Finish Race")
 main:Seperator("Main")
-main:Button("Claim All Chest [Coming Soon]",function()    
+main:Button('Claim All Chests', function()
+	workspace.goldenChest.circleInner.CFrame = player.Character.HumanoidRootPart.CFrame
+	workspace.enchantedChest.circleInner.CFrame = player.Character.HumanoidRootPart.CFrame
+	workspace.magmaChest.circleInner.CFrame = player.Character.HumanoidRootPart.CFrame
+	workspace.groupRewardsCircle.circleInner.CFrame = player.Character.HumanoidRootPart.CFrame
+	wait()
+	workspace.goldenChest.circleInner.CFrame = oldGoldenChestPosition
+	workspace.enchantedChest.circleInner.CFrame = oldEnchantedChestPosition
+	workspace.magmaChest.circleInner.CFrame = oldMagmaChestPosition
+	workspace.groupRewardsCircle.circleInner.CFrame = oldGroupRewardsPosition
 end)
 
 main:Toggle("Auto Rebirth",false,function(state)
@@ -259,32 +279,29 @@ child.Transparency = 1
         end
         end)
  
-
- 
-race:Toggle("Auto Finish Race City",false,function(state)
-_G.Race = (state and true or false)
-	wait()
-	while _G.Race == true do
+game.ReplicatedStorage.raceInProgress.Changed:Connect(function(state)
+	if not getgenv().AutoRace then return end
+	if state then
+		game.ReplicatedStorage.rEvents.raceEvent:FireServer('joinRace')
 		wait()
-local args = {
-    [1] = "joinRace"
-}
-
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
-
-wait(0.1)
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1733.00537109375, 0.4995613992214203, -5977.1591796875))
-
-wait(0.1)
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(66.76042938232422, 0.607559859752655, -8653.8896484375))
-
-wait(0.1)
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1039.900634765625, 0.6075596809387207, -10999.5283203125))
-
-
-end
+		player.PlayerGui.gameGui.raceJoinLabel.Visible = false
+	end
 end)
-
+game.ReplicatedStorage.raceStarted.Changed:Connect(function(state)
+	if not getgenv().AutoRace then return end
+	if state then
+		for i, v in pairs(workspace.raceMaps:GetChildren()) do
+			local oldFinishPosition = v.finishPart.CFrame
+			v.finishPart.CFrame = player.Character.HumanoidRootPart.CFrame
+			wait()
+			v.finishPart.CFrame = oldFinishPosition
+		end
+	end
+end)
+race:Toggle('Auto Finish Race City',false, function(state)
+	getgenv().AutoRace = state
+end)
+ 
 
 sss:Seperator("Teleports")
 		sss:Button("City", function()
@@ -390,20 +407,8 @@ child.Transparency = 1
 		end)
 
 race:Toggle("Auto Finish Race Space",false,function(state)
-_G.Race = (state and true or false)
-	wait()
-	while _G.Race == true do
-		wait()
-local args = {
-    [1] = "joinRace"
-}
-
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4379.244140625, 28.04288673400879, -14063.7978515625)
-end
+getgenv().AutoRace = state
 end)
-
 ss:Seperator("Desert Farm")
 
 local desert; 
@@ -482,18 +487,7 @@ child.Transparency = 1
 		end)
 		
 race:Toggle("Auto Finish Race Desert",false,function(state)
-_G.Race = (state and true or false)
-	wait()
-	while _G.Race == true do
-		wait()
-		local args = {
-    [1] = "joinRace"
-}
-
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2049.19140625, 27.492855072021484, 17866.822265625)
-end
+getgenv().AutoRace = state
 end)
 
 ss:Seperator("Snow Farm")
@@ -986,7 +980,12 @@ for i, e in pairs(l:GetChildren()) do
     end
 end
 end)
-
+misc:Toggle('Hide Popups', function(state)
+	getgenv().HidePopups = state
+	if not getgenv().HidePopups then player.PlayerGui.orbGui.Enabled = true player.PlayerGui.gameGui.trailsNotificationsFrame.Visible = true return end
+	player.PlayerGui.orbGui.Enabled = false
+	player.PlayerGui.gameGui.trailsNotificationsFrame.Visible = false
+end)
 misc:Toggle("INF JUMP",false,function(v)
 _G.InfJump = v
 local InfiniteJumpEnabled = true
