@@ -12,7 +12,14 @@ local anim = win:Tab("Animation", "rbxassetid://7251993295")
 local egg = win:Tab("Crystal", "rbxassetid://6031265976")
 local misc = win:Tab("Misc", "rbxassetid://6034509993")
 local cred = win:Tab("Credits", "rbxassetid://7743867811")
-
+local antiAFK = true
+player.Idled:connect(function()
+	if antiAFK then
+		game.VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+		wait(1)
+		game.VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+	end
+end)
 Main:Seperator("Turbo Hub")
 Main:Label("User : "..game.Players.LocalPlayer.DisplayName)
 Time = Main:Label("Executer Time")
