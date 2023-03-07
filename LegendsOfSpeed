@@ -269,27 +269,15 @@ _G.Hoops = (state and true or false)
  
 
  
-race:Toggle("Auto Finish Race City",false,function(state)
-_G.Race = (state and true or false)
-	wait()
-	while _G.Race == true do
-		wait()
-local args = {
-    [1] = "joinRace"
-}
-
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
-
-wait(0.1)
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1733.00537109375, 0.4995613992214203, -5977.1591796875))
-
-wait(0.1)
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(66.76042938232422, 0.607559859752655, -8653.8896484375))
-
-wait(0.1)
-game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1039.900634765625, 0.6075596809387207, -10999.5283203125))
-
-
+race:Toggle("Auto Finish Race City",false,function(State)
+yes2 = State
+while yes2 do wait()
+game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
+for _,v in pairs(game:GetService("Workspace").raceMaps:GetDescendants()) do
+if v:IsA("TouchTransmitter") and v.Parent.Name == "finishPart" then
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+end
+end
 end
 end)
 
@@ -396,18 +384,15 @@ if space == "Hoops" then
         end 
 		end)
 
-race:Toggle("Auto Finish Race Space",false,function(state)
-_G.Race = (state and true or false)
-	wait()
-	while _G.Race == true do
-		wait()
-local args = {
-    [1] = "joinRace"
-}
-
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4379.244140625, 28.04288673400879, -14063.7978515625)
+race:Toggle("Auto Finish Race Space",false,function(State)
+yes2 = State
+while yes2 do wait()
+game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
+for _,v in pairs(game:GetService("Workspace").raceMaps:GetDescendants()) do
+if v:IsA("TouchTransmitter") and v.Parent.Name == "finishPart" then
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+end
+end
 end
 end)
 
@@ -487,18 +472,15 @@ if desert == "Hoops" then
         end 
 		end)
 		
-race:Toggle("Auto Finish Race Desert",false,function(state)
-_G.Race = (state and true or false)
-	wait()
-	while _G.Race == true do
-		wait()
-		local args = {
-    [1] = "joinRace"
-}
-
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2049.19140625, 27.492855072021484, 17866.822265625)
+race:Toggle("Auto Finish Race Desert",false,function(State)
+yes2 = State
+while yes2 do wait()
+game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
+for _,v in pairs(game:GetService("Workspace").raceMaps:GetDescendants()) do
+if v:IsA("TouchTransmitter") and v.Parent.Name == "finishPart" then
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+end
+end
 end
 end)
 
