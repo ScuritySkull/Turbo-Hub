@@ -7,12 +7,12 @@ local race = Library:Tab("Race", "rbxassetid://7251993295")
 local anim = Library:Tab("Animation", "rbxassetid://7743875962")
 local egg = Library:Tab("Crystal", "rbxassetid://6031265976")
 local misc = Library:Tab("Misc", "rbxassetid://6034509993")
-local cred = Library:Tab("Credits", "rbxassetid://7743867811")
+local cred = Library:Tab("Credits", "rbxassetid://7743866778")
 local how = Library:Tab("Glitch Help", "rbxassetid://7733964808")
 
 
 main:Seperator("Turbo Hub")
-main:Label("User : "..game.Players.LocalPlayer.DisplayName)
+main:Label("Welcome "..game.Players.LocalPlayer.DisplayName)
 Time = main:Label("Executer Time")
 
 function UpdateTime()
@@ -167,16 +167,7 @@ end)
 
 
 main:Button("Teleport To Player",function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,20,1)
-end)
-main:Toggle("Always Tp",false,function(state)
-_G.Mmz = (state and true or false)
-	wait()
-	while _G.Mmz == true do
-		wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  game.Players[TpPlayer].Character.HumanoidRootPart.CFrame * CFrame.new(0,2,1)
-
-end
 end)
  
 main:Slider("Speed",0,90000,300,function(v)
@@ -259,7 +250,8 @@ _G.Hoops = (state and true or false)
 		wait()
     local children = workspace.Hoops:GetChildren()
     for i, child in ipairs(children) do
-        if child.Name == "Hoop" then
+        if child.Name == 'Hoop' then
+child.Transparency = 1
             child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
         end
@@ -269,15 +261,27 @@ _G.Hoops = (state and true or false)
  
 
  
-race:Toggle("Auto Finish Race City",false,function(State)
-yes2 = State
-while yes2 do wait()
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
-for _,v in pairs(game:GetService("Workspace").raceMaps:GetDescendants()) do
-if v:IsA("TouchTransmitter") and v.Parent.Name == "finishPart" then
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-end
-end
+race:Toggle("Auto Finish Race City",false,function(state)
+_G.Race = (state and true or false)
+	wait()
+	while _G.Race == true do
+		wait()
+local args = {
+    [1] = "joinRace"
+}
+
+game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
+
+wait(0.1)
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1733.00537109375, 0.4995613992214203, -5977.1591796875))
+
+wait(0.1)
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(66.76042938232422, 0.607559859752655, -8653.8896484375))
+
+wait(0.1)
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1039.900634765625, 0.6075596809387207, -10999.5283203125))
+
+
 end
 end)
 
@@ -376,7 +380,8 @@ if space == "Hoops" then
 		wait()
     local children = workspace.Hoops:GetChildren()
     for i, child in ipairs(children) do
-        if child.Name == "Hoop" then
+        if child.Name == 'Hoop' then
+child.Transparency = 1
             child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
         end
@@ -384,15 +389,18 @@ if space == "Hoops" then
         end 
 		end)
 
-race:Toggle("Auto Finish Race Space",false,function(State)
-yes2 = State
-while yes2 do wait()
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
-for _,v in pairs(game:GetService("Workspace").raceMaps:GetDescendants()) do
-if v:IsA("TouchTransmitter") and v.Parent.Name == "finishPart" then
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-end
-end
+race:Toggle("Auto Finish Race Space",false,function(state)
+_G.Race = (state and true or false)
+	wait()
+	while _G.Race == true do
+		wait()
+local args = {
+    [1] = "joinRace"
+}
+
+game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4379.244140625, 28.04288673400879, -14063.7978515625)
 end
 end)
 
@@ -464,7 +472,8 @@ if desert == "Hoops" then
 		wait()
     local children = workspace.Hoops:GetChildren()
     for i, child in ipairs(children) do
-        if child.Name == "Hoop" then
+        if child.Name == 'Hoop' then
+child.Transparency = 1
             child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
         end
@@ -472,15 +481,18 @@ if desert == "Hoops" then
         end 
 		end)
 		
-race:Toggle("Auto Finish Race Desert",false,function(State)
-yes2 = State
-while yes2 do wait()
-game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
-for _,v in pairs(game:GetService("Workspace").raceMaps:GetDescendants()) do
-if v:IsA("TouchTransmitter") and v.Parent.Name == "finishPart" then
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-end
-end
+race:Toggle("Auto Finish Race Desert",false,function(state)
+_G.Race = (state and true or false)
+	wait()
+	while _G.Race == true do
+		wait()
+		local args = {
+    [1] = "joinRace"
+}
+
+game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2049.19140625, 27.492855072021484, 17866.822265625)
 end
 end)
 
@@ -536,7 +548,8 @@ if snow == "Hoops" then
 		wait()
     local children = workspace.Hoops:GetChildren()
     for i, child in ipairs(children) do
-        if child.Name == "Hoop" then
+        if child.Name == 'Hoop' then
+child.Transparency = 1
             child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
         end
@@ -624,7 +637,8 @@ if magma == "Hoops" then
 		wait()
     local children = workspace.Hoops:GetChildren()
     for i, child in ipairs(children) do
-        if child.Name == "Hoop" then
+        if child.Name == 'Hoop' then
+child.Transparency = 1
             child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
         end
@@ -696,7 +710,8 @@ if legends == "Hoops" then
 		wait()
     local children = workspace.Hoops:GetChildren()
     for i, child in ipairs(children) do
-        if child.Name == "Hoop" then
+        if child.Name == 'Hoop' then
+child.Transparency = 1
             child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
         end
@@ -892,24 +907,25 @@ end
 end)
 
 local Crystal = {}
-for i,v in pairs(game.Workspace.mapCrystalsFolder:GetChildren()) do 
-  table.insert(Crystal, v.Name)
+for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
+table.insert(Crystal,v.Name)
 end
-
-local crystalDropdown = egg:Dropdown("Select Crystal", Crystal, function(value)
-  _G.selectedCrystal = value
+local OPENEGG;
+             egg:Dropdown('Select Crystal',Crystal,function(value)
+OPENEGG = value;
 end)
+egg:Toggle("Open Crystal",false,function()
+_G.Mm = (state and true or false)
+	wait()
+	while _G.Mm == true do
+		wait()
+   local args = {
+    [1] = "openCrystal",
+    [2] = OPENEGG
+}
 
-egg:Toggle("Open Crystal", false, function(state)
-  _G.openCrystal = (state and true or false)
-
-  while _G.openCrystal do
-    wait()
-    local command = "openCrystal"
-    local crystal = _G.selectedCrystal
-    game.ReplicatedStorage.rEvents.openCrystalRemote:InvokeServer(command, crystal)
-  end
-end)
+game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
+    end end)
 
 
 misc:Seperator("Misc")
@@ -927,18 +943,8 @@ end)
 
 
 
-misc:Seperator("Misc")
-misc:Toggle("ANTI AFK",false,function(state)
-_G.afk = (state and true or false)
-
-  while _G.afk do
-    wait(120)
-local vu = game:GetService("VirtualUser")
-vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-wait(1)
-vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-vu:CaptureController()vu:ClickButton2(Vector2.new())
-end
+misc:Toggle("ANTI AFK",false,function(v)
+_G.aFk = v
 end)
 
 misc:Button("Active FPS BOOST",false,function()
