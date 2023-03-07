@@ -12,6 +12,7 @@ local anim = win:Tab("Animation", "rbxassetid://7251993295")
 local egg = win:Tab("Crystal", "rbxassetid://6031265976")
 local misc = win:Tab("Misc", "rbxassetid://6034509993")
 local cred = win:Tab("Credits", "rbxassetid://7743867811")
+local player = game.Players.LocalPlayer
 local antiAFK = true
 player.Idled:connect(function()
 	if antiAFK then
