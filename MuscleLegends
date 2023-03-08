@@ -390,16 +390,13 @@ end)
 
 Rebirths:Seperator("Rebirths")
 
-local Toggle1 = Rebirths:Toggle("Auto Rebirth", false, function(State)
-_G.r = state
-while _G.r do
-wait()
-local args = {
-    [1] = "rebirthRequest"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("rebirthEvent"):FireServer(unpack(args))
-end
+Rebirths:Toggle('Auto Rebirth',false, function(state)
+	getgenv().AutoRebirth = state
+	while true do
+		if not getgenv().AutoRebirth then return end
+		wait()
+		game.ReplicatedStorage.rEvents.rebirthRemote:InvokeServer('rebirthRequest')
+	end
 end)
 
 
