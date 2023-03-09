@@ -1,4 +1,3 @@
-
 local Update =  loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/UiLibList/main/TurboHub")()
 local Library = Update:Window("Turbo Hub","",Enum.KeyCode.RightControl);
 local main = Library:Tab("Main", "rbxassetid://6026568198")
@@ -12,7 +11,6 @@ local cred = Library:Tab("Credits", "rbxassetid://7743866778")
 local how = Library:Tab("Glitch Help", "rbxassetid://7733964808")
 
 local player = game.Players.LocalPlayer
-local mouse = player:GetMouse()
 local antiAFK = true
 player.Idled:connect(function()
 	if antiAFK then
@@ -198,7 +196,34 @@ main:Slider("Jump",0,1000,50,function(v)
  game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
  end)
     
-    
+   ss:Seperator("Auto Farm")
+   ss:Label("[ Farm Setting ]")
+   local setFarm;
+   ss:Dropdown("Select Mode",{
+   "Super Fast",
+   "Fast",
+   "Medium",
+   "Slow"
+   }, function(value)
+   setFarm = value;
+
+   if setFarm == "Super Fast" then
+       setFarm = 40
+    elseif setFarm == "Fast" then
+       setFarm = 30 
+    elseif setFarm == "Medium" then
+       setFarm = 15
+    elseif setFarm == "Slow" then
+       setFarm = 5
+    end
+   end)
+
+    ss:Label("• Super Fast Value = 40")
+    ss:Label("• Fast Value = 30")
+    ss:Label("• Medium Value = 15")
+    ss:Label("• Slow Value = 5")
+    ss:Label("Not Recommended Using Super Fast Mode")
+    ss:Label("Because it will cause a delay / lag in the game")
     
  ss:Seperator("City Farm")
  
@@ -222,7 +247,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Red Orb"
 local A_3 = "City"
@@ -238,7 +263,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Yellow Orb"
 local A_3 = "City"
@@ -254,7 +279,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Gem"
 local A_3 = "City"
@@ -349,7 +374,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Red Orb"
 local A_3 = "Space"
@@ -364,7 +389,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Gem"
 local A_3 = "Space"
@@ -379,7 +404,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Yellow Orb"
 local A_3 = "Space"
@@ -430,7 +455,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Red Orb"
 local A_3 = "Desert"
@@ -446,7 +471,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Gem"
 local A_3 = "Desert"
@@ -461,7 +486,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Yellow Orb"
 local A_3 = "Desert"
@@ -510,7 +535,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Red Orb"
 local A_3 = "Snow City"
@@ -524,7 +549,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Gem"
 local A_3 = "Snow City"
@@ -556,7 +581,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Yellow Orb"
 local A_3 = "Snow City"
@@ -586,7 +611,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Red Orb"
 local A_3 = "Magma City"
@@ -600,7 +625,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Gem"
 local A_3 = "Magma City"
@@ -613,7 +638,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Yellow Orb"
 local A_3 = "Magma City"
@@ -659,7 +684,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Red Orb"
 local A_3 = "Legends Highway"
@@ -672,7 +697,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Gem"
 local A_3 = "Legends Highway"
@@ -687,7 +712,7 @@ _G.Mm = (state and true or false)
 	wait()
 	while _G.Mm == true do
 		wait()
-	for i=1, 40 do
+	for i=1, setFarm do
      local A_1 = "collectOrb"
 local A_2 = "Yellow Orb"
 local A_3 = "Legends Highway"
@@ -937,27 +962,19 @@ end)
 
 
 
-misc:Button("ANTI AFK",function()
-
-wait(0.5)local ba=Instance.new("ScreenGui")
-local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
-local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
-ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
-ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
-ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
-ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti AFK Script"ca.TextColor3=Color3.new(0,1,1)
-ca.TextSize=22;da.Parent=ca
-da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
-da.Size=UDim2.new(0,370,0,107)_b.Parent=da
-_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
-_b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="made by ur mom "
-_b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
-ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
-ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
-ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
-game:service'Players'.LocalPlayer.Idled:connect(function()
-bb:CaptureController()bb:ClickButton2(Vector2.new())
-ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status : Active"end)
+misc:Toggle("ANTI AFK",false,function(v)
+antiAFK = v
+while antiAFK do
+wait()
+local player = game.Players.LocalPlayer
+player.Idled:connect(function()
+	if antiAFK then
+		game.VirtualUser:Button2Down(Vector2.new(1, 0), workspace.CurrentCamera.CFrame)
+		wait(1)
+		game.VirtualUser:Button2Up(Vector2.new(1, 0), workspace.CurrentCamera.CFrame)
+	end
+end)
+end
 end)
 
 misc:Button("Active FPS BOOST",false,function()
@@ -999,7 +1016,7 @@ for i, e in pairs(l:GetChildren()) do
     end
 end
 end)
-misc:Toggle('Hide Popups', function(state)
+misc:Toggle('Hide Popups', false,function(state)
 	getgenv().HidePopups = state
 	if not getgenv().HidePopups then player.PlayerGui.orbGui.Enabled = true player.PlayerGui.gameGui.trailsNotificationsFrame.Visible = true return end
 	player.PlayerGui.orbGui.Enabled = false
@@ -1345,6 +1362,7 @@ how:Label("4. Don't Use Other Features Except Yellow Orbs")
 how:Label("5. Done")
 
 how:Seperator("- - Notes - -")
-how:Label("The Power Pet Will Return If You")
-how:Label("Disconnect / Quit the Game")
+how:Label("> Make sure your Rebirth is Odd")
+how:Label("> The Power Pet Will Return If You Disconnect Or")
+how:Label("Quit the Game")
 
