@@ -964,17 +964,14 @@ end)
 
 misc:Toggle("ANTI AFK",false,function(v)
 antiAFK = v
-while antiAFK do
-wait()
 local player = game.Players.LocalPlayer
 player.Idled:connect(function()
 	if antiAFK then
-		game.VirtualUser:Button2Down(Vector2.new(1, 0), workspace.CurrentCamera.CFrame)
+		game.VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 		wait(1)
-		game.VirtualUser:Button2Up(Vector2.new(1, 0), workspace.CurrentCamera.CFrame)
+		game.VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 	end
 end)
-end
 end)
 
 misc:Button("Active FPS BOOST",false,function()
