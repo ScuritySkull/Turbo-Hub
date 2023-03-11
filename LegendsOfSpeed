@@ -146,7 +146,7 @@ game:GetService("ReplicatedStorage").rEvents.tradingEvent:FireServer(unpack(args
 	while _G.Chat == true do
 		wait(1)
 local args = {
-    [1] = "Uciha Hub The Beast",
+    [1] = "Im AFK",
     [2] = "All"
 }
 
@@ -161,7 +161,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 	while _G.Chat == true do
 		wait(1)
 local args = {
-    [1] = "You're a Noob",
+    [1] = "You're a Nooqb",
     [2] = "All"
 }
 
@@ -927,24 +927,26 @@ end)
 
 local Crystal = {}
 for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
-table.insert(Crystal,v.Name)
+    table.insert(Crystal,v.Name)
 end
-local OPENEGG;
-             egg:Dropdown('Select Crystal',Crystal,function(value)
-OPENEGG = value;
-end)
-egg:Toggle("Open Crystal",false,function()
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = OPENEGG
-}
 
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end)
+local OPENEGG
+egg:Dropdown('Select Crystal', Crystal, function(value)
+    OPENEGG = value
+end)
+
+egg:Toggle("Open Crystal", false, function(state)
+    _G.Mm = state
+    while _G.Mm do
+        wait()
+        local args = {
+            [1] = "openCrystal",
+            [2] = OPENEGG
+        }
+        game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
+    end
+end)
+
 
 
 misc:Seperator("Misc")
