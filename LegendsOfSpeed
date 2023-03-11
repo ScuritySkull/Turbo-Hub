@@ -144,7 +144,7 @@ game:GetService("ReplicatedStorage").rEvents.tradingEvent:FireServer(unpack(args
  	_G.Chat = (state and true or false)
 	wait()
 	while _G.Chat == true do
-		wait(1)
+		wait(6)
 local args = {
     [1] = "Im AFK",
     [2] = "All"
@@ -159,9 +159,9 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
  	_G.Chat = (state and true or false)
 	wait()
 	while _G.Chat == true do
-		wait(1)
+		wait(6)
 local args = {
-    [1] = "You're a Nooqb",
+    [1] = "You're a Noob",
     [2] = "All"
 }
 
@@ -739,137 +739,31 @@ child.Transparency = 1
 end
 end)
 
-egg:Seperator("Auto Open Crystal")
+egg:Seperator("Crystal")
 
 
-    
-local getPets; 
-    egg:Dropdown("Select Crystal", {"Electro Legends Crystal",
-  "Lava Crystal"  ,
-  "Inferno Crystal"  ,
-  "Snow Crystal"  ,
-  "Electro Crystal"  ,
-  "Space Crystal"  ,
-  "Desert Crystal"  
-  
-    },  function(value)
-        getPets = value; --STORES THE USERS SELECTION
-    end)
-  egg:Toggle("Auto Open",false, function(state)
+  local Crystal = {}
+for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
+    table.insert(Crystal,v.Name)
+end
 
-        ---Loops---
-        
-
-if getPets == "Electro Legends Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Electro Legends Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
-
-
-
-if getPets == "Lava Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Lava Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
-
-
-
-if getPets == "Inferno Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Inferno Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
-
-
-
-if getPets == "Electro Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Electro Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
-
-
-
-if getPets == "Snow Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Snow Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
-
-
-
-if getPets == "Desert Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Desert Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
-
-
-
-if getPets == "Space Crystal" then
-
-_G.Mm = (state and true or false)
-	wait()
-	while _G.Mm == true do
-		wait()
-   local args = {
-    [1] = "openCrystal",
-    [2] = "Space Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end end
+local OPENEGG
+egg:Dropdown('Select Crystal', Crystal, function(value)
+    OPENEGG = value
 end)
+
+egg:Toggle("Open Crystal", false, function(state)
+    _G.Mm = state
+    while _G.Mm do
+        wait()
+        local args = {
+            [1] = "openCrystal",
+            [2] = OPENEGG
+        }
+        game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
+    end
+end)
+  
 
 
 egg:Toggle("Auto Farm Unltimate Overdrive Bunny",false,function(state)
@@ -925,27 +819,6 @@ game:GetService("ReplicatedStorage").rEvents.petEvolveEvent:FireServer(unpack(ar
 end
 end)
 
-local Crystal = {}
-for i,v in pairs(game.workspace.mapCrystalsFolder:GetChildren()) do 
-    table.insert(Crystal,v.Name)
-end
-
-local OPENEGG
-egg:Dropdown('Select Crystal', Crystal, function(value)
-    OPENEGG = value
-end)
-
-egg:Toggle("Open Crystal", false, function(state)
-    _G.Mm = state
-    while _G.Mm do
-        wait()
-        local args = {
-            [1] = "openCrystal",
-            [2] = OPENEGG
-        }
-        game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-    end
-end)
 
 
 
