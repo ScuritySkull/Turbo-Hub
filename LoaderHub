@@ -30,6 +30,8 @@ local function loading()
     _G.nameGame = "Ninja Legends"
     elseif game.PlaceId == 3623096087 then
     _G.nameGame = "Muscle Legends"
+    elseif game.PlaceId == 9285238704 then
+    _G.nameGame = "Race Clicker"
     else
     _G.nameGame = "Games Not Found"
     end
@@ -172,5 +174,7 @@ loading()
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/NinjaLegends")()
    elseif game.PlaceId == 3623096087 then
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/MuscleLegends")()
+   elseif game.PlaceId == 9285238704 then
+    loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/RaceClicker")()
    
  end
