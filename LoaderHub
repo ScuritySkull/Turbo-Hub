@@ -304,11 +304,7 @@ BtnStroke.Name = "BtnStroke"
 		local Load = game.CoreGui:FindFirstChild("Loading")
 		if Load then
 			Load:Destroy()
-		end
-	end
-end
-
- if game.PlaceId == 3101667897 then
+      if game.PlaceId == 3101667897 then
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/LegendsOfSpeed")()
    elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/BloxFruits")()
@@ -320,3 +316,10 @@ end
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/RaceClicker")()
    
  end
+		end
+
+	end
+
+end
+
+ 
