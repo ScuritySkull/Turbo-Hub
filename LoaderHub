@@ -294,6 +294,7 @@ local key = (KeyBox.Text)
 if (ValidateKey(service_name, key) or KeyBox.Text == "SecretTurbo") then
 KeyTurboParent.Visible = false
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Correct Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
+wait(3)
     loading()
 else
         game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Invalid Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
