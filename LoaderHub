@@ -1,147 +1,6 @@
--- Copy this Part at the Top of Hub
-local pandacore = loadstring(game:HttpGet("https://pandatechnology.xyz/service_api/PandaAuthCore.lua", true))() -- Library of Key System
-local service_name  = "turbohub" -- Given by SkieHacker
-local function KeyTurbo()
-	local KeyTurbo = Instance.new("ScreenGui")
-	local Blur = Instance.new("Frame")
-	local Main = Instance.new("Frame")
-	local UICorner = Instance.new("UICorner")
-	local Logo = Instance.new("ImageLabel")
-	local UICorner_2 = Instance.new("UICorner")
-	local KeyTurboParent = Instance.new("Frame")
-	local UICorner_3 = Instance.new("UICorner")
-	local Bar = Instance.new("Frame")
-	local UICorner_4 = Instance.new("UICorner")
-	local BAR1 = Instance.new("Frame")
-	local UICorner_5 = Instance.new("UICorner")
-	local TextLabel = Instance.new("TextLabel")
-	local Top = Instance.new("Frame")
-	local UICorner_6 = Instance.new("UICorner")
-	local TextLabel_2 = Instance.new("TextLabel")
-	local TextLabel_3 = Instance.new("TextLabel")
-    local TextLabell = Instance.new("TextLabel")
-    local player = game.Players.LocalPlayer
-    
-    local nameGame = "Test Game"
-	--Properties:
-
-	KeyTurbo.Name = "KeyTurbo"
-	KeyTurbo.Parent = game.CoreGui
-	KeyTurbo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-	
-
-	
-	Logo.Name = "Logo"
-	Logo.Parent = KeyTurboParent
-	Logo.BackgroundColor3 = Color3.fromRGB(35, 35, 35)        
-    Logo.BackgroundTransparency = 1.000
-	Logo.Position = UDim2.new(0, 10, 0, 20)
-	Logo.Size = UDim2.new(0, 150, 0, 150)
-	Logo.Image = "rbxassetid://12362129605"
-
-	UICorner_2.CornerRadius = UDim.new(0, 5)
-	UICorner_2.Parent = KeyBox
-
-	KeyTurboParent.Name = "KeyTurboParent"
-	KeyTurboParent.Parent = KeyTurbo
-	KeyTurboParent.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	KeyTurboParent.Position = UDim2.new(0, 250, 0, 200)
-	KeyTurboParent.Size = UDim2.new(0, 415, 0, 180)
-
-	UICorner_3.Parent = KeyTurboParent
-local BtnStroke = Instance.new("UIStroke") 
-BtnStroke.Name = "BtnStroke"
-            BtnStroke.Parent = KeyTurboParent
-            BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            BtnStroke.Color = Color3.fromRGB(255,130,0)
-            BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
-        BtnStroke.Thickness = 2
-        BtnStroke.Transparency = 0
-        BtnStroke.Enabled = true
-        BtnStroke.Archivable = true
-local KeyBox = Instance.new("TextBox")            
-KeyBox.Name = "KeyBox"
-KeyBox.Parent = KeyTurboParent
-KeyBox.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-KeyBox.BackgroundTransparency = 1
-KeyBox.Position = UDim2.new(0,160,0,50)
-KeyBox.Size = UDim2.new(0, 230, 0, 30)
-KeyBox.Font = Enum.Font.SourceSans
-KeyBox.Text = "Enter Key Here.."
-KeyBox.TextColor3 = Color3.fromRGB(200, 200, 200)
-KeyBox.TextSize = 16.000
-
-  TextLabell.Parent = KeyTurboParent
-	TextLabell.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabell.BackgroundTransparency = 1.000
-	TextLabell.Position = UDim2.new(0, 250, 0,5)
-	TextLabell.Size = UDim2.new(0, 45, 0, 45)
-	TextLabell.Font = Enum.Font.GothamSemibold
-	TextLabell.Text = "Turbo Hub | Key System"
-	TextLabell.TextColor3 = Color3.fromRGB(255,130,0)
-	TextLabell.TextSize = 20.000
-
-local ImageButton = Instance.new("TextButton")
-ImageButton.Parent = KeyTurboParent
-ImageButton.Position = UDim2.new(0,170,0,90)
-ImageButton.Size = UDim2.new(0, 100, 0, 30)
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 130, 0)
-ImageButton.BackgroundTransparency = 0
-ImageButton.TextColor3 = Color3.fromRGB(0,0,0)
-ImageButton.Text = "GetKey"
-ImageButton.MouseButton1Down:connect(function()
--- To Get Key, Just Copy  this
-setclipboard(GetLink(service_name))
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Link Copied!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
-end)
-	UICorner_5.CornerRadius = UDim.new(0, 30)
-	UICorner_5.Parent = ImageButton
-
-local ImageButton1 = Instance.new("TextButton")
-ImageButton1.Parent = KeyTurboParent
-ImageButton1.Position = UDim2.new(0,280,0,90)
-ImageButton1.Size = UDim2.new(0, 100, 0, 30)
-ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 130, 0)
-ImageButton1.BackgroundTransparency = 0
-ImageButton1.TextColor3 = Color3.fromRGB(0,0,0)
-ImageButton1.Text = "CheckKey"
-ImageButton1.MouseButton1Down:connect(function()
-local key = (KeyBox.Text)
-if (ValidateKey(service_name, key) or KeyBox.Text == "SecretTurbo") then
-KeyTurboParent.Visible = false
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Correct Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
-    loading()
-else
-        game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Invalid Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
-    end
-end)
-	UICorner_4.CornerRadius = UDim.new(0, 30)
-	UICorner_4.Parent = ImageButton1
-
-local ImageButton2 = Instance.new("TextButton")
-ImageButton2.Parent = KeyTurboParent
-ImageButton2.Position = UDim2.new(0,185,0,130)
-ImageButton2.Size = UDim2.new(0, 180, 0, 30)
-ImageButton2.BackgroundColor3 = Color3.fromRGB(255, 130, 0)
-ImageButton2.BackgroundTransparency = 0
-ImageButton2.TextColor3 = Color3.fromRGB(0,0,0)
-ImageButton2.Text = "Copy Discord Link"
-ImageButton2.MouseButton1Down:connect(function()
--- To Get Key, Just Copy  this
-setclipboard("https://discord.gg/3aG6P5hVyN")
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Discord Copied!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
-end)
-	UICorner_2.CornerRadius = UDim.new(0, 30)
-	UICorner_2.Parent = ImageButton2
-end
-
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Executed!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
-wait(1)
-KeyTurbo()
 
 
-local function loading()
+function loading()
 	local Loading = Instance.new("ScreenGui")
 	local Blur = Instance.new("Frame")
 	local Main = Instance.new("Frame")
@@ -322,4 +181,145 @@ BtnStroke.Name = "BtnStroke"
 
 end
 
- 
+ -- Copy this Part at the Top of Hub
+local pandacore = loadstring(game:HttpGet("https://pandatechnology.xyz/service_api/PandaAuthCore.lua", true))() -- Library of Key System
+local service_name  = "turbohub" -- Given by SkieHacker
+local function KeyTurbo()
+	local KeyTurbo = Instance.new("ScreenGui")
+	local Blur = Instance.new("Frame")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Logo = Instance.new("ImageLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local KeyTurboParent = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local Bar = Instance.new("Frame")
+	local UICorner_4 = Instance.new("UICorner")
+	local BAR1 = Instance.new("Frame")
+	local UICorner_5 = Instance.new("UICorner")
+	local TextLabel = Instance.new("TextLabel")
+	local Top = Instance.new("Frame")
+	local UICorner_6 = Instance.new("UICorner")
+	local TextLabel_2 = Instance.new("TextLabel")
+	local TextLabel_3 = Instance.new("TextLabel")
+    local TextLabell = Instance.new("TextLabel")
+    local player = game.Players.LocalPlayer
+    
+    local nameGame = "Test Game"
+	--Properties:
+
+	KeyTurbo.Name = "KeyTurbo"
+	KeyTurbo.Parent = game.CoreGui
+	KeyTurbo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	
+
+	
+	Logo.Name = "Logo"
+	Logo.Parent = KeyTurboParent
+	Logo.BackgroundColor3 = Color3.fromRGB(35, 35, 35)        
+    Logo.BackgroundTransparency = 1.000
+	Logo.Position = UDim2.new(0, 10, 0, 20)
+	Logo.Size = UDim2.new(0, 150, 0, 150)
+	Logo.Image = "rbxassetid://12362129605"
+
+	UICorner_2.CornerRadius = UDim.new(0, 5)
+	UICorner_2.Parent = KeyBox
+
+	KeyTurboParent.Name = "KeyTurboParent"
+	KeyTurboParent.Parent = KeyTurbo
+	KeyTurboParent.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	KeyTurboParent.Position = UDim2.new(0, 250, 0, 200)
+	KeyTurboParent.Size = UDim2.new(0, 415, 0, 180)
+
+	UICorner_3.Parent = KeyTurboParent
+local BtnStroke = Instance.new("UIStroke") 
+BtnStroke.Name = "BtnStroke"
+            BtnStroke.Parent = KeyTurboParent
+            BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+            BtnStroke.Color = Color3.fromRGB(255,130,0)
+            BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
+        BtnStroke.Thickness = 2
+        BtnStroke.Transparency = 0
+        BtnStroke.Enabled = true
+        BtnStroke.Archivable = true
+local KeyBox = Instance.new("TextBox")            
+KeyBox.Name = "KeyBox"
+KeyBox.Parent = KeyTurboParent
+KeyBox.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+KeyBox.BackgroundTransparency = 1
+KeyBox.Position = UDim2.new(0,160,0,50)
+KeyBox.Size = UDim2.new(0, 230, 0, 30)
+KeyBox.Font = Enum.Font.SourceSans
+KeyBox.Text = "Enter Key Here.."
+KeyBox.TextColor3 = Color3.fromRGB(200, 200, 200)
+KeyBox.TextSize = 16.000
+
+  TextLabell.Parent = KeyTurboParent
+	TextLabell.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabell.BackgroundTransparency = 1.000
+	TextLabell.Position = UDim2.new(0, 250, 0,5)
+	TextLabell.Size = UDim2.new(0, 45, 0, 45)
+	TextLabell.Font = Enum.Font.GothamSemibold
+	TextLabell.Text = "Turbo Hub | Key System"
+	TextLabell.TextColor3 = Color3.fromRGB(255,130,0)
+	TextLabell.TextSize = 20.000
+
+local ImageButton = Instance.new("TextButton")
+ImageButton.Parent = KeyTurboParent
+ImageButton.Position = UDim2.new(0,170,0,90)
+ImageButton.Size = UDim2.new(0, 100, 0, 30)
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 130, 0)
+ImageButton.BackgroundTransparency = 0
+ImageButton.TextColor3 = Color3.fromRGB(0,0,0)
+ImageButton.Text = "GetKey"
+ImageButton.MouseButton1Down:connect(function()
+-- To Get Key, Just Copy  this
+setclipboard(GetLink(service_name))
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Link Copied!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
+end)
+	UICorner_5.CornerRadius = UDim.new(0, 30)
+	UICorner_5.Parent = ImageButton
+
+local ImageButton1 = Instance.new("TextButton")
+ImageButton1.Parent = KeyTurboParent
+ImageButton1.Position = UDim2.new(0,280,0,90)
+ImageButton1.Size = UDim2.new(0, 100, 0, 30)
+ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 130, 0)
+ImageButton1.BackgroundTransparency = 0
+ImageButton1.TextColor3 = Color3.fromRGB(0,0,0)
+ImageButton1.Text = "CheckKey"
+ImageButton1.MouseButton1Down:connect(function()
+local key = (KeyBox.Text)
+if (ValidateKey(service_name, key) or KeyBox.Text == "SecretTurbo") then
+KeyTurboParent.Visible = false
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Correct Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
+    loading()
+else
+        game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Invalid Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
+    end
+end)
+	UICorner_4.CornerRadius = UDim.new(0, 30)
+	UICorner_4.Parent = ImageButton1
+
+local ImageButton2 = Instance.new("TextButton")
+ImageButton2.Parent = KeyTurboParent
+ImageButton2.Position = UDim2.new(0,185,0,130)
+ImageButton2.Size = UDim2.new(0, 180, 0, 30)
+ImageButton2.BackgroundColor3 = Color3.fromRGB(255, 130, 0)
+ImageButton2.BackgroundTransparency = 0
+ImageButton2.TextColor3 = Color3.fromRGB(0,0,0)
+ImageButton2.Text = "Copy Discord Link"
+ImageButton2.MouseButton1Down:connect(function()
+-- To Get Key, Just Copy  this
+setclipboard("https://discord.gg/3aG6P5hVyN")
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Discord Copied!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
+end)
+	UICorner_2.CornerRadius = UDim.new(0, 30)
+	UICorner_2.Parent = ImageButton2
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Executed!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
+wait(1)
+KeyTurbo()
+
