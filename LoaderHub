@@ -229,9 +229,9 @@ local function KeyTurbo()
 	KeyTurboParent.Name = "KeyTurboParent"
 	KeyTurboParent.Parent = KeyTurbo
 	KeyTurboParent.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	KeyTurboParent.Position = UDim2.new(0, 250, 0, 200)
+	KeyTurboParent.Position = UDim2.new(0.5, -207, 0.5, -90) 
 	KeyTurboParent.Size = UDim2.new(0, 415, 0, 180)
-
+      
 	UICorner_3.Parent = KeyTurboParent
 local BtnStroke = Instance.new("UIStroke") 
 BtnStroke.Name = "BtnStroke"
