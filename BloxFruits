@@ -5205,7 +5205,7 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 wait(1)
 Notification:Notify(
-   {Title = "FIEND HUB", Description = "You Have Max Observation"},
+   {Title = "TURBO HUB", Description = "You Have Max Observation"},
    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "option"},
    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
 )
@@ -6988,7 +6988,7 @@ Swords:Toggle("Auto Quest Soul Guitar",_G.AutoQuestSoulGuitar,function(value)
 game.StarterGui:SetCore("SendNotification", {
 								Title = "Notification", 
 								Text = "Go To Grave Then Pray!" ,
-								Icon = "http://www.roblox.com/asset/?id=11931759373",
+								Icon = "http://www.roblox.com/asset/?id=12362129605",
 								Duration = 2.5
 							})
 										TP(CFrame.new(-8653.2060546875, 140.98487854003906, 6160.033203125))
@@ -6996,7 +6996,7 @@ game.StarterGui:SetCore("SendNotification", {
 game.StarterGui:SetCore("SendNotification", {
 								Title = "Notification", 
 								Text = "Wait To Night!" ,
-								Icon = "http://www.roblox.com/asset/?id=11931759373",
+								Icon = "http://www.roblox.com/asset/?id=12362129605",
 								Duration = 2.5
 							})
 									else
@@ -8853,9 +8853,9 @@ spawn(function()
                 function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
                 else
 game.StarterGui:SetCore("SendNotification", {
-        Title = "Fiendhub"; -- the title (ofc)
+        Title = "TURBO HUB"; -- the title (ofc)
         Text = "Mirage not Found!"; -- what the text says (ofc)
-        Icon = "rbxassetid://11931759373"; -- the image if u want. 
+        Icon = "rbxassetid://12362129605"; -- the image if u want. 
         Duration = 3; -- how long the notification should in secounds
         })
                 if _G.MirageHop then
@@ -8918,7 +8918,7 @@ print('\n'..MoonMessage..'\n'..MirageMessage..'\n'..JoinServer)
 
 local url = "https://discord.com/api/webhooks/1050996834413334549/0-iPYRJpF87gn27kW9vqV3a633zI4c432K0OVrfqEX8KghhQxVdL5DiuMMjxF-XgOVWi" -- ur webhook url
 local data = {
-	["username"] = 'FIEND HUB', -- Webhook name here
+	["username"] = 'TURBO HUB', -- Webhook name here
 	['content'] = '<@&1068889841091219498>', -- ping everyone if you want to ping role use this <@&1007291553074647132> 
 	["avatar_url"] = "https://cdn.discordapp.com/attachments/1046327225626140693/1068018151452844053/IMG_20221023_070551.png", -- ur discord logo url
 	["embeds"] = {
@@ -11961,7 +11961,7 @@ wait(1);
 
 Notify({
 Description = "There are no devil fruits left.";
-Title = "FIEND HUB";
+Title = "TURBO HUB";
 Duration = 5;
 });
 						end
@@ -12676,9 +12676,9 @@ end)
   end)
     
     Misc:Button("Destroy Ui",function()
-        if game.CoreGui:FindFirstChild("FIEND HUB") then
-            game.CoreGui:FindFirstChild("FIEND HUB"):Destroy()
-            game.CoreGui:FindFirstChild("PADOXHUBMODILE"):Destroy()
+        if game.CoreGui:FindFirstChild("RELZHUB") then
+            game.CoreGui:FindFirstChild("RELZHUB"):Destroy()
+            game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
         end
     end)
 
