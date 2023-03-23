@@ -298,7 +298,7 @@ KeyTurboParent.Visible = false
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Correct Key!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
 wait(3)
     loading()
-elseif GPLname == uName and KeyBox.Text == "Giveaways") then
+elseif GPLname == uName and KeyBox.Text == "Giveaways" then
 KeyTurboParent.Visible = false
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Giveaways Key 🎉"; Icon = "rbxassetid://12362129605"; Duration = 3 })
 wait(3)
