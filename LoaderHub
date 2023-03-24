@@ -291,7 +291,7 @@ ImageButton1.TextColor3 = Color3.fromRGB(0,0,0)
 ImageButton1.Text = "CheckKey"
 ImageButton1.MouseButton1Down:connect(function()
 local key = (KeyBox.Text)
-local uName = "officialraf12" , "123kycian" , "ArsyadAl" , "farelresek123"
+local uName = "officialraf12" or "123kycian" or "ArsyadAl" or "farelresek123"
 local GPLname = game.Players.LocalPlayer.Name
 if (ValidateKey(service_name, key) or KeyBox.Text == "SecretTurbo") then
 KeyTurboParent.Visible = false
