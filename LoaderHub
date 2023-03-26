@@ -182,7 +182,7 @@ BtnStroke.Name = "BtnStroke"
 end
 
  -- Copy this Part at the Top of Hub
-local pandacore = loadstring(game:HttpGet("https://pandatechnology.xyz/service_api/PandaAuthCore.lua", true))() -- Library of Key System
+local pandacore = loadstring(game:HttpGet("https://pandatechnology.xyz/service_api/PandaAuthCore.lua", true))() 
 local service_name  = "turbohub" -- Given by SkieHacker
 local function KeyTurbo()
 	local KeyTurbo = Instance.new("ScreenGui")
