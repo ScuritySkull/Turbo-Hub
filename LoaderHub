@@ -1,4 +1,4 @@
---[[
+
 
 function loading()
 	local Loading = Instance.new("ScreenGui")
@@ -162,7 +162,7 @@ BtnStroke.Name = "BtnStroke"
 	do 
 		local Load = game.CoreGui:FindFirstChild("Loading")
 		if Load then
-			Load:Destroy() ]]--
+			Load:Destroy()
       if game.PlaceId == 3101667897 then
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/LegendsOfSpeed")()
    elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
@@ -175,7 +175,7 @@ BtnStroke.Name = "BtnStroke"
     loadstring(Game:HttpGet"https://raw.githubusercontent.com/ScuritySkull/Turbo-Hub/main/RaceClicker")()
    
  end
-	--[[	end
+		end
 
 	end
 
@@ -330,4 +330,4 @@ end
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "TURBO HUB"; Text = "Executed!"; Icon = "rbxassetid://12362129605"; Duration = 3 })
 wait(1)
 KeyTurbo()
-]]--
+
